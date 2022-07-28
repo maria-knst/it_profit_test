@@ -1,33 +1,62 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#root{
-    display: flex;
-    justify-content: center;
+#root {
+  display: flex;
+  justify-content: center;
 }
 
-.App{
-    width: 800px;
-    height: 800px;
-    background: antiquewhite;
+.App {
+  width: 45%;
+}
+.App .FormTitle {
+  text-align: center;
+  margin: 8px 0;
+  color: #4f6609;
+}
+.App .MyForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #4f6609;
+  border-radius: 24px;
+}
+.App .MyForm .MyFormInput {
+  padding: 1% 3%;
+  width: 90%;
+  height: 44px;
+  margin: 8px 0;
+  border: 2px solid #4f6609;
+  border-radius: 8px;
+}
+.App .MyForm .MyFormMessage {
+  padding: 1% 3%;
+  width: 90%;
+  margin: 8px 0;
+  border: 2px solid #4f6609;
+  border-radius: 8px;
+  color: #4f6609;
+}
+.App .MyForm .MyFormButton {
+  width: 40%;
+  height: 44px;
+  margin: 8px 0;
+  border: 2px solid #4f6609;
+  border-radius: 8px;
+  color: #4f6609;
+  font-weight: bold;
+}
+.App .MyForm .MyFormButton:hover {
+  background: #4f6609;
+  color: rgba(246, 205, 21, 0.1529411765);
+}
+.App .RequestAnswer {
+  text-align: center;
+  margin: 8px 0;
+  color: #4f6609;
 }
 
-.FormTitle{
-    text-align: center;
-    margin: 8px 0;
-}
-
-.MyForm{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.MyFormInput{
-    width: 70%;
-    margin: 8px 0;
-
-}
+/*# sourceMappingURL=App.css.map */
