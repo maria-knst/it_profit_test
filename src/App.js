@@ -1,13 +1,17 @@
 import "./App.css";
 import axios from "axios";
+import {useState} from "react";
 
 function App() {
+
+  const [myState, setmyState] = useState({title: 'success', message: 'Nothing to send'})
 
   function fetchRequest(event){
     event.preventDefault()
       axios.get('./server.json')
           .then((res )=>{
             console.log(res);
+            setmyState({title: res.data[0].title, message: res.data[0].message })
           })
     console.log('Ok')
   }
@@ -23,7 +27,7 @@ function App() {
           <textarea className="MyFormMessage" name="message" id="MyFormMessage" minLength="10" maxLength="300" placeholder="Message" cols="30" rows="10"></textarea>
           <button className="MyFormButton" onClick={fetchRequest}> Send Me</button>
         </form>
-        <p className="RequestAnswer"> Nothing send :(</p>
+        <p className="RequestAnswer"> {myState.message}</p>
     </div>
   );
 }
