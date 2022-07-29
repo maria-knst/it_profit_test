@@ -1,7 +1,16 @@
 import "./App.css";
+import axios from "axios";
 
 function App() {
 
+  function fetchRequest(event){
+    event.preventDefault()
+      axios.get('./server.json')
+          .then((res )=>{
+            console.log(res);
+          })
+    console.log('Ok')
+  }
 
   return (
     <div className="App">
@@ -12,7 +21,7 @@ function App() {
           <input className="MyFormInput" type="tel" placeholder="+7 (987) 654-32-10"/>
           <input className="MyFormInput" type="date" placeholder="Your Birthday"/>
           <textarea className="MyFormMessage" name="message" id="MyFormMessage" minLength="10" maxLength="300" placeholder="Message" cols="30" rows="10"></textarea>
-          <button className="MyFormButton"> Send Me</button>
+          <button className="MyFormButton" onClick={fetchRequest}> Send Me</button>
         </form>
         <p className="RequestAnswer"> Nothing send :(</p>
     </div>
