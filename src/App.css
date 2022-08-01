@@ -27,18 +27,42 @@
 .App .MyForm .MyFormInput {
   padding: 1% 3%;
   width: 90%;
-  height: 44px;
   margin: 8px 0;
+  position: relative;
+}
+.App .MyForm .MyFormInput .MyFormInnerInput {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 44px;
   border: 2px solid #4f6609;
   border-radius: 8px;
 }
-.App .MyForm .MyFormMessage {
+.App .MyForm .MyFormInput .MyFormInnerTextArea {
+  position: relative;
+  z-index: 1;
   padding: 1% 3%;
-  width: 90%;
+  width: 100%;
   margin: 8px 0;
   border: 2px solid #4f6609;
   border-radius: 8px;
   color: #4f6609;
+}
+.App .MyForm .MyFormInput .MyFormInfoDiv {
+  display: none;
+  position: absolute;
+  top: 100%;
+  z-index: 3;
+  color: #4f6609;
+  font-size: 14px;
+  width: 200px;
+  height: 22px;
+  text-align: center;
+  border: 2px solid #4f6609;
+  border-radius: 8px;
+}
+.App .MyForm .MyFormInput .MyFormInfoDiv_active {
+  display: block;
 }
 .App .MyForm .MyFormButton {
   width: 40%;
