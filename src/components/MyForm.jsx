@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import axios from "axios";
 import MyInput from "./MyInput";
+import MyTextarea from "./MyTextarea";
 
 const MyForm = (props) => {
 
@@ -62,18 +63,11 @@ const MyForm = (props) => {
 
     return (
         <form className="MyForm">
-            <MyInput divVisible={validateFields.v_fullName} className="MyFormInnerInput" value={fields.fullName}     onChange={e => setFields({...fields, fullName: e.target.value})}     type="text"  placeholder="Full Name"          divmessage="Name" style={{textTransform: 'uppercase'}}/>
+            <MyInput divVisible={validateFields.v_fullName} className="MyFormInnerInput" value={fields.fullName}   onChange={e => setFields({...fields, fullName: e.target.value})}     type="text"  placeholder="Full Name"          divmessage="Name" style={{textTransform: 'uppercase'}}/>
             <MyInput divVisible={validateFields.v_eMail} className="MyFormInnerInput" value={fields.eMail}        onChange={e => setFields({...fields, eMail: e.target.value})}        type="text"  placeholder="E-mail"             divmessage="E-mail"/>
             <MyInput divVisible={validateFields.v_phoneNumber} className="MyFormInnerInput" value={fields.phoneNumber}  onChange={e => setFields({...fields, phoneNumber: e.target.value})}  type="tel"   placeholder="+7 (987) 654-32-10" divmessage="Phone number"/>
             <MyInput divVisible={validateFields.v_birthdayDate} className="MyFormInnerInput" value={fields.birthdayDate} onChange={e => setFields({...fields, birthdayDate: e.target.value})} type="date"  placeholder="Your Birthday"      divmessage="Date"/>
-
-            <div className="MyFormInput">
-                <textarea className="MyFormInnerTextArea" value={fields.message} onChange={e => setFields({...fields, message: e.target.value})}  style={{height: '200px' }} name="message" id="MyFormMessage" placeholder="Message"></textarea>
-                <div className="MyFormInfoDiv MyFormInfoDiv_active">
-                    <p>Message is incorrect</p>
-                </div>
-            </div>
-
+            <MyTextarea divVisible={validateFields.v_message} className="MyFormInnerTextArea" value={fields.message} onChange={e => setFields({...fields, message: e.target.value})}  style={{height: '200px' }} name="message" id="MyFormMessage" placeholder="Message" divmessage="Message" />
 
             <button className="MyFormButton" onClick={fetchRequest}> Send Me</button>
         </form>
